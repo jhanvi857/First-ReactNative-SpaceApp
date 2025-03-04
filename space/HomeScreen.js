@@ -96,48 +96,6 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
 });
-
-// export const Images = () => {
-//   goToBuzzer = () => {
-//     this.props.navigation.navigate('ImageGallery')
-//   }
-//   return (
-//     <ScrollView>
-//       <Text style={style.heading}>Explore Imaegs</Text>
-//         <View style={style.flexBox}>
-//           <Image
-//             source={{
-//               uri: 'https://live.staticflickr.com/65535/53805163612_3650942342_n.jpg',
-//             }}
-//             style={style.imageStyle}
-//           />
-//           <Image
-//             source={{
-//               uri: 'https://live.staticflickr.com/65535/53443280532_6bf73a620f_w.jpg',
-//             }}
-//             style={style.imageStyle}
-//           />
-//           <Image
-//             source={{
-//               uri: 'https://live.staticflickr.com/65535/53438185218_3e098ef438.jpg',
-//             }}
-//             style={style.imageStyle}
-//           />
-//           <Image
-//             source={{
-//               uri: 'https://live.staticflickr.com/65535/53610778314_1a5ea5186d.jpg',
-//             }}
-//             style={style.imageStyle}
-//           />
-//         </View>
-//         <TouchableOpacity
-//           style={style.buttonStyling}
-//           onPress={this.goToBuzzer}>
-//           More Images ➡️
-//         </TouchableOpacity>
-//     </ScrollView>
-//   );
-// };
 // for space mission ...
 const missions = [
   {
