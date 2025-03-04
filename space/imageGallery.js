@@ -9,7 +9,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const ImageGallery = () => {
+const ImageGallery = ({navigation}) => {
   const imageData = [
     {
       imgUrl:
@@ -90,6 +90,8 @@ const ImageGallery = () => {
   ];
   return (
     <ScrollView style={{ backgroundColor: 'black' }}>
+    <TouchableOpacity title="Back to Home" onPress={() => navigation.navigate('Home')} style={styles.backButton}>Back to home</TouchableOpacity>
+      
       <Text style={styles.title}>Image Gallery</Text>
       <FlatList
         data={imageData}
@@ -135,6 +137,20 @@ const styles = StyleSheet.create({
   textSec: {
     fontSize: 18,
     color: 'white',
+  },
+  backButton: {
+    backgroundColor: '#444',
+    shadowColor: '#FFFFFF',
+    //shadowOpacity: 0.5,
+    shadowRadius: 8,
+    padding: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+    color: 'white',
+    fontSize: 25,
+    fontFamily: 'serif',
+    textAlign: 'center',
+    marginBottom: 5,
   },
 });
 
