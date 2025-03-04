@@ -92,7 +92,7 @@ export const Earth = ({ navigation }) => {
   return (
     <ScrollView style={{ backgroundColor: 'black' }}>
     
-        <TouchableOpacity title="Back to Home" onPress={() => navigation.navigate('Home')} style={myStyle.backButton}>Back to home</TouchableOpacity>
+      <TouchableOpacity title="Back to Home" onPress={() => navigation.navigate('Home')} style={myStyle.backButton}>Back to home</TouchableOpacity>
       <Text style={myStyle.heading}>Earth</Text>
       <Image
         source={{

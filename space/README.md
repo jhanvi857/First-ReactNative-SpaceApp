@@ -1,11 +1,37 @@
-# Sample Snack app
+Space Explorer - My First React Native App 🚀
 
-Open the `App.js` file to start writing some code. You can preview the changes directly on your phone or tablet by scanning the **QR code** or use the iOS or Android emulators. When you're done, click **Save** and share the link!
+📌 Overview
+This is a simple space-themed mobile app built using React Native and Expo. As a beginner, I created this project to explore React Native components, navigation, and basic app structure. It includes information about planets, space missions, and an image gallery. Excited to keep learning and improving!
 
-When you're ready to see everything that Expo provides (or if you want to use your own editor) you can **Download** your project and use it with [expo cli](https://docs.expo.dev/get-started/installation/#expo-cli)).
+✨ Features
+• Detailed information on all planets in the solar system 🌍🪐
+• Image gallery for space exploration 📸
+• Smooth navigation between different screens 🚀
+• Click on a mission to visit NASA's official website
+• Simple & intuitive navigation system
 
-All projects created in Snack are publicly available, so you can easily share the link to this project via link, or embed it on a web page with the `<>` button.
 
-If you're having problems, you can tweet to us [@expo](https://twitter.com/expo) or ask in our [forums](https://forums.expo.dev/c/expo-dev-tools/61) or [Discord](https://chat.expo.dev/).
+📦 Installation
+1️⃣ Clone the Repository
+git clone https://github.com/yourusername/space-explorer.git
+cd space-explorer
 
-Snack is Open Source. You can find the code on the [GitHub repo](https://github.com/expo/snack).
+2️⃣ Install Dependencies
+npm install
+
+3️⃣ Run the App
+For Android:
+npx react-native run-android
+
+For iOS:
+npx react-native run-ios
+
+
+🚀 How to Use?
+Open the app and browse planets.
+Click on a planet to learn more about it.
+Explore space missions and click a mission to visit NASA's website.
+View stunning space images in the gallery.
+
+🤝 Contributing
+Feel free to fork this repo, raise an issue, or submit a pull request!

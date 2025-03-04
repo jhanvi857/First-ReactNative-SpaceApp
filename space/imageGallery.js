@@ -6,6 +6,7 @@ import {
   Text,
   StyleSheet,
   FlatList,
+  TouchableOpacity
 } from 'react-native';
 
 const ImageGallery = () => {
