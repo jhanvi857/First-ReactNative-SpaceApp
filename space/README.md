@@ -13,7 +13,7 @@ This is a simple space-themed mobile app built using React Native and Expo. As a
 
 📦 Installation<br>
 1️⃣ Clone the Repository<br>
-git clone https://github.com/yourusername/space-explorer.git<br>
+git clone https://github.com/jhanvi857/First-ReactNative-SpaceApp.git<br>
 cd space-explorer
 
 2️⃣ Install Dependencies: <br>
@@ -21,8 +21,7 @@ npm install
 
 3️⃣ Run the App<br>
 For Android:<br>
-npx react-native run-android
-
+npx react-native run-android<br>
 For iOS:<br>
 npx react-native run-ios
 
