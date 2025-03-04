@@ -8,6 +8,7 @@ import {
   StyleSheet,
   FlatList,
 } from 'react-native';
+import { Linking } from 'react-native';
 
 const style = StyleSheet.create({
   heading: {
@@ -144,24 +145,28 @@ const missions = [
     description: 'First moon landing mission',
     uiImage:
       'https://www.nasa.gov/wp-content/uploads/2019/07/edu_srch_celebrate_the_50th_anniversary_apollo11.jpg?resize=1200,936',
+      url:"https://www.nasa.gov/mission/apollo-11/"
   },
   {
     name: 'Voyager 1',
     description: 'Exploring interstellar space',
     uiImage:
       'https://science.nasa.gov/wp-content/uploads/2023/12/pia02855.gif?w=1536&format=webp',
+      url:"https://science.nasa.gov/mission/voyager/"
   },
   {
     name: 'Hubble Telescope',
     description: 'Observing distant galaxies',
     uiImage:
       'https://science.nasa.gov/wp-content/uploads/2023/07/52046519794-082f96a17d-o.jpg?w=1536&format=webp',
+      url:"https://science.nasa.gov/mission/hubble/overview/about-hubble/#:~:text=Hubble%20has%20peered%20back%20into,history%20of%20the%20expanding%20universe."
   },
   {
     name: 'Mars Rover',
     description: 'Exploring the Martian surface',
     uiImage:
       'https://science.nasa.gov/wp-content/uploads/2024/03/sol016-lander-pan-pia05117.jpg?w=1536&format=webp',
+      url :"https://science.nasa.gov/mission/mars-exploration-rovers-spirit-and-opportunity/"
   },
 ];
 
@@ -174,7 +179,9 @@ export const SpaceMissions = () => {
         renderItem={({ item }) => (
           <View style={styles.missionsContainer}>
             <Image source={{ uri: item.uiImage }} style={styles.imageStyle} />
-            <TouchableOpacity style={styles.missionButton}>
+            <TouchableOpacity style={styles.missionButton} onPress={()=>{
+              Linking.openURL(item.url);
+            }}>
               {item.name}
             </TouchableOpacity>
             <Text style={styles.missionText}>{item.description}</Text>
