@@ -6,7 +6,8 @@ import {
   Text,
   StyleSheet,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  SafeAreaView
 } from 'react-native';
 
 const ImageGallery = ({navigation}) => {
@@ -89,9 +90,8 @@ const ImageGallery = ({navigation}) => {
     },
   ];
   return (
-    <ScrollView style={{ backgroundColor: 'black' }}>
-    <TouchableOpacity title="Back to Home" onPress={() => navigation.navigate('Home')} style={styles.backButton}>Back to home</TouchableOpacity>
-      
+    <SafeAreaView style={{ backgroundColor: 'black' }}>
+    <TouchableOpacity title="Back to Home" onPress={() => navigation.navigate('Home')} style={styles.backButton}><Text style={{ color: 'white', fontSize: 20 }}>Back to Home</Text></TouchableOpacity>
       <Text style={styles.title}>Image Gallery</Text>
       <FlatList
         data={imageData}
@@ -102,7 +102,7 @@ const ImageGallery = ({navigation}) => {
           </View>
         )}
       />
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
   backButton: {
     backgroundColor: '#444',
     shadowColor: '#FFFFFF',
-    //shadowOpacity: 0.5,
+    shadowOpacity: 0.5,
     shadowRadius: 8,
     padding: 10,
     borderRadius: 10,
@@ -151,6 +151,7 @@ const styles = StyleSheet.create({
     fontFamily: 'serif',
     textAlign: 'center',
     marginBottom: 5,
+    margin:10,
   },
 });
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   Text,
-  ScrollView,
+  SafeAreaView,
   View,
   Image,
   TouchableOpacity,
@@ -14,7 +14,7 @@ const style = StyleSheet.create({
   heading: {
     backgroundColor: '#B0BEC5',
     shadowColor: '#FFFFFF',
-    //shadowOpacity: 0.5,
+    // shadowOpacity: 0.5,
     shadowRadius: 8,
     padding: 10,
     borderRadius: 10,
@@ -24,23 +24,25 @@ const style = StyleSheet.create({
     fontFamily: 'serif',
     textAlign: 'center',
     marginBottom: 15,
-    marginTop: 10,
+    marginTop: 25,
+    elevation:10,
   },
   buttonStyling: {
-    // backgroundColor: '#B0BEC5',
-    // shadowColor: '#FFFFFF',
-    backgroundColor: '#444',
-    shadowColor: '#FFFFFF',
-    //shadowOpacity: 0.5,
-    shadowRadius: 8,
-    padding: 10,
-    borderRadius: 10,
-    alignItems: 'center',
-    color: 'white',
-    fontSize: 25,
-    fontFamily: 'serif',
+  backgroundColor: '#444',
+  padding: 10,
+  borderRadius: 10,
+  alignItems: 'center',
+  marginBottom: 5,
+  shadowColor: '#FFFFFF', // Works only on iOS
+  shadowRadius: 8, 
+  elevation: 5,  // Works on Android
+},
+
+  buttonText: {
+    color: 'white',  // Ensure text is visible
+    fontSize: 22,  
+    fontFamily: 'serif', 
     textAlign: 'center',
-    marginBottom: 5,
   },
   imageStyle: {
     height: 150,
@@ -130,7 +132,7 @@ const missions = [
 
 export const SpaceMissions = () => {
   return (
-    <ScrollView style={{ backgroundColor: 'black' }}>
+    <SafeAreaView style={{ backgroundColor: 'black' }}>
       <Text style={style.heading}>Space Missions</Text>
       <FlatList
         data={missions}
@@ -140,13 +142,13 @@ export const SpaceMissions = () => {
             <TouchableOpacity style={styles.missionButton} onPress={()=>{
               Linking.openURL(item.url);
             }}>
-              {item.name}
+              <Text style={style.buttonText}>{item.name}</Text>
             </TouchableOpacity>
             <Text style={styles.missionText}>{item.description}</Text>
           </View>
         )}
       />
-    </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -156,7 +158,7 @@ export class HomeScreen extends Component {
   };
   render() {
     return (
-      <ScrollView style={{ backgroundColor: '#1a1a1a' }}>
+      <SafeAreaView style={{ backgroundColor: '#1a1a1a' , flex:1 }}>
         {/*<Neptune/>
       <Mars/>
       <Jupiter/>
@@ -174,13 +176,13 @@ export class HomeScreen extends Component {
         />
         <View style={style.flexBox}>
           <TouchableOpacity style={style.buttonStyling}>
-            planets
+          <Text style={style.buttonText}>Planets</Text>
           </TouchableOpacity>
           <TouchableOpacity style={style.buttonStyling}>
-            Images
+          <Text style={style.buttonText}>Images</Text>
           </TouchableOpacity>
           <TouchableOpacity style={style.buttonStyling}>
-            Missions
+          <Text style={style.buttonText}>Missions</Text>
           </TouchableOpacity>
         </View>
         <Text style={style.heading}>Explore planets</Text>
@@ -195,7 +197,7 @@ export class HomeScreen extends Component {
             <TouchableOpacity
               style={style.buttonStyling}
               onPress={() => this.props.navigation.navigate('Earth')}>
-              Earth
+              <Text style={style.buttonText}>Earth</Text>
             </TouchableOpacity>
           </View>
           <View>
@@ -208,7 +210,7 @@ export class HomeScreen extends Component {
             <TouchableOpacity
               style={style.buttonStyling}
               onPress={() => this.props.navigation.navigate('Venus')}>
-              venus
+              <Text style={style.buttonText}>Venus</Text>
             </TouchableOpacity>
           </View>
 
@@ -222,7 +224,7 @@ export class HomeScreen extends Component {
             <TouchableOpacity
               style={style.buttonStyling}
               onPress={() => this.props.navigation.navigate('Uranus')}>
-              Uranus
+              <Text style={style.buttonText}>Uranus</Text>
             </TouchableOpacity>
           </View>
           <View>
@@ -235,7 +237,7 @@ export class HomeScreen extends Component {
             <TouchableOpacity
               style={style.buttonStyling}
               onPress={() => this.props.navigation.navigate('Saturn')}>
-              saturn
+              <Text style={style.buttonText}>Saturn</Text>
             </TouchableOpacity>
           </View>
           <View>
@@ -248,7 +250,7 @@ export class HomeScreen extends Component {
             <TouchableOpacity
               style={style.buttonStyling}
               onPress={() => this.props.navigation.navigate('Mercury')}>
-              mercury
+              <Text style={style.buttonText}>Mercury</Text>
             </TouchableOpacity>
           </View>
           <View>
@@ -261,7 +263,7 @@ export class HomeScreen extends Component {
             <TouchableOpacity
               style={style.buttonStyling}
               onPress={() => this.props.navigation.navigate('Jupiter')}>
-              jupiter
+              <Text style={style.buttonText}>Jupiter</Text>
             </TouchableOpacity>
           </View>
 
@@ -275,7 +277,7 @@ export class HomeScreen extends Component {
             <TouchableOpacity
               style={style.buttonStyling}
               onPress={() => this.props.navigation.navigate('Mars')}>
-              mars
+              <Text style={style.buttonText}>Mars</Text>
             </TouchableOpacity>
           </View>
           <View>
@@ -288,7 +290,7 @@ export class HomeScreen extends Component {
             <TouchableOpacity
               style={style.buttonStyling}
               onPress={() => this.props.navigation.navigate('Neptune')}>
-              neptune
+              <Text style={style.buttonText}>Neptune</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -322,12 +324,12 @@ export class HomeScreen extends Component {
         <TouchableOpacity
           style={style.buttonStyling}
           onPress={() => this.props.navigation.navigate('Images')}>
-          More Images ➡️
+          <Text style={style.buttonText}>More Images ➡️</Text>
         </TouchableOpacity>
         <View style={style.flexBox}></View>
         {/* for space missions code...*/}
         <SpaceMissions />
-      </ScrollView>
+      </SafeAreaView>
     );
   }
 }
