@@ -118,7 +118,6 @@ const styles = StyleSheet.create({
   flexBox: {
     display: 'flex',
     flexDirection: 'column',
-    flexWrap: 'wrap',
     justifyContent: 'space-around',
     alignItems: 'center',
     fontSize: 30,
